@@ -1,0 +1,5 @@
+---
+- name: delete script
+  file:
+    path: /tmp/change_password.sh
+    state: absent

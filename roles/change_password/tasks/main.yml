@@ -1,0 +1,27 @@
+---
+- name: delete script
+  file:
+    path: /tmp/change_password.sh
+    state: absent
+
+- name: Put script at target host
+  template:
+    src: templates/change_password.sh.j2
+    dest: /tmp/change_password.sh
+    mode: '0766'
+
+- name: run password change script
+  shell: /tmp/change_password.sh
+
+
+#- name: delete script
+#  file:
+#    path: /tmp/change_password.sh
+#    state: absent
+
+
+
+
+
+
+
